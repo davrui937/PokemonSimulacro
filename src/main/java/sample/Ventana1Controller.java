@@ -37,7 +37,7 @@ public class Ventana1Controller {
 	@FXML
 	private void initialize(){
 		listapokemon.add(pokemon1);
-		listapokemon.add(pokemon2);
+		listapokemon.add(pokemon2); 
 		listapokemon.add(pokemon3);
 		listapokemon.add(pokemon4);
 		listapokemon.add(pokemon5);
