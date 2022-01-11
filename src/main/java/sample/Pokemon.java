@@ -1,11 +1,22 @@
 package sample;
 
+import javafx.scene.image.Image;
+
 public class Pokemon{
 
     private int nivel;
     private String nombre;
     private int vidamax;
     private int vidaact;
+    private Image imagen;
+
+    public Pokemon(int nivel, String nombre, int vidamax, int vidaact, Image imagen) {
+        this.nivel = nivel;
+        this.nombre = nombre;
+        this.vidamax = vidamax;
+        this.vidaact = vidaact;
+        this.imagen = imagen;
+    }
 
     public int getNivel() {
         return nivel;
@@ -39,10 +50,11 @@ public class Pokemon{
         this.vidaact = vidaact;
     }
 
-    public Pokemon(int nivel, String nombre, int vidamax, int vidaact) {
-        this.nivel = nivel;
-        this.nombre = nombre;
-        this.vidamax = vidamax;
-        this.vidaact = vidaact;
+    public Image getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Image imagen) {
+        this.imagen = imagen;
     }
 }
