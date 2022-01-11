@@ -3,6 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
@@ -21,122 +22,98 @@ public class Ventana1Controller {
 	private final String NIVELAUX= "Nv ";
 
 	ArrayList <Pokemon> listapokemon = new ArrayList<>();
-	Pokemon pokemon1 = new Pokemon(65,"Reshiram",100,60, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")));
-	Pokemon pokemon2 = new Pokemon(47,"Banano",100,20,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")));
-	Pokemon pokemon3 = new Pokemon(32,"Macaco",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")));
-	Pokemon pokemon4 = new Pokemon(84,"Infernape",100,80,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")));
+	Pokemon pokemon1 = new Pokemon(65,"Reshiram",100,61, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")));
+	Pokemon pokemon2 = new Pokemon(47,"Banano",100,86,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")));
+	Pokemon pokemon3 = new Pokemon(32,"Macaco",100,40,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")));
+	Pokemon pokemon4 = new Pokemon(84,"Infernape",100,76,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")));
 	Pokemon pokemon5 = new Pokemon(14,"Rillaboom",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\rillaboom.png")));
 	Pokemon pokemon6 = new Pokemon(45,"Slaking",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\slaking.png")));
 
+	@FXML
+	Button botoncontinuar;
 
+
+	//Primer Pokemon
 	@FXML
 	AnchorPane pok00;
 	@FXML
 	Label nombre00;
-
 	@FXML
 	Label nivel00;
-
 	@FXML
 	ProgressBar barravida00;
-
 	@FXML
 	Label vida00;
-
 	@FXML
 	ImageView imagen00;
 
-
+	//Segundo Pokemon
 	@FXML
 	AnchorPane pok10;
-
 	@FXML
 	Label nombre10;
-
 	@FXML
 	Label nivel10;
-
 	@FXML
 	ProgressBar barravida10;
-
 	@FXML
 	Label vida10;
-
 	@FXML
 	ImageView imagen10;
 
-
+	//Tercer Pokemon
 	@FXML
 	AnchorPane pok20;
-
 	@FXML
 	Label nombre20;
-
 	@FXML
 	Label nivel20;
-
 	@FXML
 	ProgressBar barravida20;
-
 	@FXML
 	Label vida20;
-
 	@FXML
 	ImageView imagen20;
 
-
+	//Cuarto Pokemon
 	@FXML
 	AnchorPane pok01;
-
 	@FXML
 	Label nombre01;
-
 	@FXML
 	Label nivel01;
-
 	@FXML
 	ProgressBar barravida01;
-
 	@FXML
 	Label vida01;
-
 	@FXML
 	ImageView imagen01;
 
-
+	//Quinto Pokemon
 	@FXML
 	AnchorPane pok11;
-
 	@FXML
 	Label nombre11;
-
 	@FXML
 	Label nivel11;
-
 	@FXML
 	ProgressBar barravida11;
-
 	@FXML
 	Label vida11;
-
 	@FXML
 	ImageView imagen11;
 
+	//Sexto Pokemon
 	@FXML
 	AnchorPane pok21;
-
 	@FXML
 	Label nombre21;
-
 	@FXML
 	Label nivel21;
-
 	@FXML
 	ProgressBar barravida21;
-
 	@FXML
 	Label vida21;
-
 	@FXML
 	ImageView imagen21;
 
@@ -201,6 +178,7 @@ public class Ventana1Controller {
 
 	@FXML
 	private void clickpokemon00(){
+		botonmostrar();
 		pok00.setStyle("-fx-background-color: #A99DB0");
 		pok10.setStyle("-fx-background-color: #7D6A87");
 		pok20.setStyle("-fx-background-color: #7D6A87");
@@ -211,6 +189,7 @@ public class Ventana1Controller {
 
 	@FXML
 	private void clickpokemon10(){
+		botonmostrar();
 		pok10.setStyle("-fx-background-color: #A99DB0");
 		pok00.setStyle("-fx-background-color: #7D6A87");
 		pok20.setStyle("-fx-background-color: #7D6A87");
@@ -221,7 +200,7 @@ public class Ventana1Controller {
 
 	@FXML
 	private void clickpokemon20(){
-
+		botonmostrar();
 		pok20.setStyle("-fx-background-color: #A99DB0");
 		pok10.setStyle("-fx-background-color: #7D6A87");
 		pok00.setStyle("-fx-background-color: #7D6A87");
@@ -232,6 +211,7 @@ public class Ventana1Controller {
 
 	@FXML
 	private void clickpokemon01(){
+		botonmostrar();
 		pok01.setStyle("-fx-background-color: #A99DB0");
 		pok10.setStyle("-fx-background-color: #7D6A87");
 		pok20.setStyle("-fx-background-color: #7D6A87");
@@ -242,6 +222,7 @@ public class Ventana1Controller {
 
 	@FXML
 	private void clickpokemon11(){
+		botonmostrar();
 		pok11.setStyle("-fx-background-color: #A99DB0");
 		pok10.setStyle("-fx-background-color: #7D6A87");
 		pok20.setStyle("-fx-background-color: #7D6A87");
@@ -252,6 +233,7 @@ public class Ventana1Controller {
 
 	@FXML
 	private void clickpokemon21(){
+		botonmostrar();
 		pok21.setStyle("-fx-background-color: #A99DB0");
 		pok10.setStyle("-fx-background-color: #7D6A87");
 		pok20.setStyle("-fx-background-color: #7D6A87");
@@ -259,5 +241,10 @@ public class Ventana1Controller {
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok00.setStyle("-fx-background-color: #7D6A87");
 	}
+
+	private void botonmostrar(){
+		botoncontinuar.setVisible(true);
+	}
+
 
 }

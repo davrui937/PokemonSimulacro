@@ -62,6 +62,9 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <padding>
+                        <Insets bottom="8.0" />
+                     </padding>
                   </AnchorPane>
                   <AnchorPane fx:id="pok10" layoutX="10.0" layoutY="7.0" onMouseClicked="#clickpokemon10" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="1">
                      <children>
@@ -96,8 +99,11 @@
                         <Insets />
                      </opaqueInsets>
                      <GridPane.margin>
-                        <Insets bottom="8.0" />
+                        <Insets />
                      </GridPane.margin>
+                     <padding>
+                        <Insets bottom="8.0" />
+                     </padding>
                   </AnchorPane>
                   <AnchorPane fx:id="pok20" layoutX="260.0" layoutY="7.0" onMouseClicked="#clickpokemon20" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2">
                      <children>
@@ -132,8 +138,11 @@
                         <Insets />
                      </opaqueInsets>
                      <GridPane.margin>
-                        <Insets bottom="8.0" />
+                        <Insets />
                      </GridPane.margin>
+                     <padding>
+                        <Insets bottom="8.0" />
+                     </padding>
                   </AnchorPane>
                   <AnchorPane fx:id="pok01" layoutX="260.0" layoutY="7.0" onMouseClicked="#clickpokemon01" prefHeight="200.0" prefWidth="201.0" GridPane.rowIndex="1">
                      <children>
@@ -250,11 +259,11 @@
             </GridPane>
             <Pane prefHeight="21.0" prefWidth="750.0" style="-fx-background-color: #7D6A87;">
                <children>
-                  <Button layoutX="649.0" layoutY="3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="16.0" prefWidth="71.0" text="Continuar" textAlignment="JUSTIFY">
+                  <Button fx:id="botoncontinuar" layoutX="637.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="19.0" prefWidth="84.0" text="Continuar" textAlignment="JUSTIFY" visible="false">
                      <font>
                         <Font size="9.0" />
                      </font></Button>
-                  <Label layoutX="6.0" layoutY="-2.0" text="Choose a Pokemon:" textFill="WHITE">
+                  <Label layoutX="6.0" layoutY="-2.0" text="Seleciona un Pokemón:" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font></Label>
