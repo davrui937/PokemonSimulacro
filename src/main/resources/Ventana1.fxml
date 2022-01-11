@@ -50,11 +50,6 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="16.0" fitWidth="39.0" layoutX="186.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../Pictures/tick.PNG" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="32.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/ps.PNG" />
@@ -91,11 +86,6 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="16.0" fitWidth="39.0" layoutX="186.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../Pictures/tick.PNG" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="32.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/ps.PNG" />
@@ -105,6 +95,9 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="8.0" />
+                     </GridPane.margin>
                   </AnchorPane>
                   <AnchorPane fx:id="pok20" layoutX="260.0" layoutY="7.0" onMouseClicked="#clickpokemon20" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2">
                      <children>
@@ -129,11 +122,6 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="16.0" fitWidth="39.0" layoutX="186.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../Pictures/tick.PNG" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="32.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/ps.PNG" />
@@ -143,6 +131,9 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="8.0" />
+                     </GridPane.margin>
                   </AnchorPane>
                   <AnchorPane fx:id="pok01" layoutX="260.0" layoutY="7.0" onMouseClicked="#clickpokemon01" prefHeight="200.0" prefWidth="201.0" GridPane.rowIndex="1">
                      <children>
@@ -167,11 +158,6 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="16.0" fitWidth="39.0" layoutX="186.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../Pictures/tick.PNG" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="32.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/ps.PNG" />
@@ -181,6 +167,9 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </AnchorPane>
                   <AnchorPane fx:id="pok11" layoutX="10.0" layoutY="7.0" onMouseClicked="#clickpokemon11" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
@@ -205,11 +194,6 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="16.0" fitWidth="39.0" layoutX="186.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../Pictures/tick.PNG" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="32.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/ps.PNG" />
@@ -219,6 +203,9 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </AnchorPane>
                   <AnchorPane fx:id="pok21" layoutX="260.0" layoutY="209.0" onMouseClicked="#clickpokemon21" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
@@ -243,11 +230,6 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="16.0" fitWidth="39.0" layoutX="186.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../Pictures/tick.PNG" />
-                           </image>
-                        </ImageView>
                         <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="32.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/ps.PNG" />
@@ -257,8 +239,14 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
                   </AnchorPane>
                </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
             </GridPane>
             <Pane prefHeight="21.0" prefWidth="750.0" style="-fx-background-color: #7D6A87;">
                <children>
