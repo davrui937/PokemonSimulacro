@@ -27,9 +27,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <AnchorPane fx:id="pok00" onMouseClicked="#pokemon00" prefHeight="200.0" prefWidth="201.0">
+                  <AnchorPane fx:id="pok00" onMouseClicked="#clickpokemon00" prefHeight="200.0" prefWidth="201.0">
                      <children>
-                        <ImageView fx:id="imagen00" fitHeight="125.0" fitWidth="172.0" layoutX="51.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen00" fitHeight="125.0" fitWidth="172.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/reshiram.gif" />
                            </image>
@@ -68,25 +68,25 @@
                         <Insets />
                      </opaqueInsets>
                   </AnchorPane>
-                  <AnchorPane fx:id="pok001" layoutX="10.0" layoutY="7.0" onMouseClicked="#pokemon00" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="1">
+                  <AnchorPane fx:id="pok10" layoutX="10.0" layoutY="7.0" onMouseClicked="#clickpokemon10" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="1">
                      <children>
-                        <ImageView fx:id="imagen001" fitHeight="125.0" fitWidth="172.0" layoutX="51.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen10" fitHeight="125.0" fitWidth="172.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/reshiram.gif" />
                            </image>
                         </ImageView>
-                        <Label fx:id="nombre001" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
+                        <Label fx:id="nombre10" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida001" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
-                        <Label fx:id="nivel001" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
+                        <ProgressBar fx:id="barravida10" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <Label fx:id="nivel10" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida001" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida10" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -106,25 +106,25 @@
                         <Insets />
                      </opaqueInsets>
                   </AnchorPane>
-                  <AnchorPane fx:id="pok0011" layoutX="260.0" layoutY="7.0" onMouseClicked="#pokemon00" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2">
+                  <AnchorPane fx:id="pok20" layoutX="260.0" layoutY="7.0" onMouseClicked="#clickpokemon20" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2">
                      <children>
-                        <ImageView fx:id="imagen0011" fitHeight="125.0" fitWidth="172.0" layoutX="51.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen20" fitHeight="125.0" fitWidth="172.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/reshiram.gif" />
                            </image>
                         </ImageView>
-                        <Label fx:id="nombre0011" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
+                        <Label fx:id="nombre20" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida0011" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
-                        <Label fx:id="nivel0011" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
+                        <ProgressBar fx:id="barravida20" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <Label fx:id="nivel20" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida0011" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida20" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -144,25 +144,25 @@
                         <Insets />
                      </opaqueInsets>
                   </AnchorPane>
-                  <AnchorPane fx:id="pok0012" layoutX="260.0" layoutY="7.0" onMouseClicked="#pokemon00" prefHeight="200.0" prefWidth="201.0" GridPane.rowIndex="1">
+                  <AnchorPane fx:id="pok01" layoutX="260.0" layoutY="7.0" onMouseClicked="#clickpokemon01" prefHeight="200.0" prefWidth="201.0" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="imagen0012" fitHeight="125.0" fitWidth="172.0" layoutX="51.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen01" fitHeight="125.0" fitWidth="172.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/reshiram.gif" />
                            </image>
                         </ImageView>
-                        <Label fx:id="nombre0012" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
+                        <Label fx:id="nombre01" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida0012" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
-                        <Label fx:id="nivel0012" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
+                        <ProgressBar fx:id="barravida01" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <Label fx:id="nivel01" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida0012" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida01" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -182,25 +182,25 @@
                         <Insets />
                      </opaqueInsets>
                   </AnchorPane>
-                  <AnchorPane fx:id="pok002" layoutX="10.0" layoutY="7.0" onMouseClicked="#pokemon00" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <AnchorPane fx:id="pok11" layoutX="10.0" layoutY="7.0" onMouseClicked="#clickpokemon11" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="imagen002" fitHeight="125.0" fitWidth="172.0" layoutX="51.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen11" fitHeight="125.0" fitWidth="172.0" layoutX="78.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/reshiram.gif" />
                            </image>
                         </ImageView>
-                        <Label fx:id="nombre002" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
+                        <Label fx:id="nombre11" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida002" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
-                        <Label fx:id="nivel002" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
+                        <ProgressBar fx:id="barravida11" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <Label fx:id="nivel11" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida002" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida11" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -220,25 +220,25 @@
                         <Insets />
                      </opaqueInsets>
                   </AnchorPane>
-                  <AnchorPane fx:id="pok0021" layoutX="260.0" layoutY="209.0" onMouseClicked="#pokemon00" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <AnchorPane fx:id="pok21" layoutX="260.0" layoutY="209.0" onMouseClicked="#clickpokemon21" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="imagen0021" fitHeight="125.0" fitWidth="172.0" layoutX="51.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen21" fitHeight="125.0" fitWidth="172.0" layoutX="71.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Pictures/reshiram.gif" />
                            </image>
                         </ImageView>
-                        <Label fx:id="nombre0021" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
+                        <Label fx:id="nombre21" layoutX="33.0" layoutY="14.0" prefHeight="19.0" prefWidth="162.0" text="Nada" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida0021" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
-                        <Label fx:id="nivel0021" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
+                        <ProgressBar fx:id="barravida21" layoutX="57.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <Label fx:id="nivel21" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida0021" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida21" layoutX="44.0" layoutY="189.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
