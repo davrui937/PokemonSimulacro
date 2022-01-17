@@ -57,4 +57,21 @@ public class Pokemon{
     public void setImagen(Image imagen) {
         this.imagen = imagen;
     }
+
+
+
+    public static void curacion(Pokemon pokemon){
+        pokemon.setVidaact((int) (pokemon.getVidaact()+ Math.random()*76 + 25));
+    }
+    public static void ataqueseguro(Pokemon enemigo){
+        enemigo.setVidaact(enemigo.getVidaact()-20);
+    }
+
+    public static void ataquepocoseguro(Pokemon enemigo){
+        enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*26 + 10));
+    }
+
+    public static void ataquenadaseguro(Pokemon enemigo){
+        enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*51 + 0));
+    }
 }
