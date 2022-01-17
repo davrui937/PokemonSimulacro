@@ -50,7 +50,7 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel001" layoutX="17.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label layoutX="17.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -89,7 +89,7 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel0011" layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -128,7 +128,7 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel00111" layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -167,7 +167,7 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel00112" layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -203,7 +203,7 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel001121" layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -239,7 +239,7 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel0011211" layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
