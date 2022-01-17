@@ -146,7 +146,7 @@
                   </AnchorPane>
                   <AnchorPane fx:id="pok01" layoutX="260.0" layoutY="7.0" onMouseClicked="#clickpokemon01" prefHeight="200.0" prefWidth="201.0" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="imagen01" fitHeight="125.0" fitWidth="172.0" layoutX="61.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen01" fitHeight="125.0" fitWidth="172.0" layoutX="61.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@reshiram.png" />
                            </image>
@@ -156,18 +156,18 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida01" layoutX="32.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida01" layoutX="32.0" layoutY="170.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel01" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida01" layoutX="32.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida01" layoutX="32.0" layoutY="183.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel00112" layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label fx:id="nivel00112" layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -182,7 +182,7 @@
                   </AnchorPane>
                   <AnchorPane fx:id="pok11" layoutX="10.0" layoutY="7.0" onMouseClicked="#clickpokemon11" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="imagen11" fitHeight="125.0" fitWidth="172.0" layoutX="61.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen11" fitHeight="125.0" fitWidth="172.0" layoutX="61.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@reshiram.png" />
                            </image>
@@ -192,18 +192,18 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida11" layoutX="32.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida11" layoutX="32.0" layoutY="170.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel11" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida11" layoutX="23.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida11" layoutX="23.0" layoutY="183.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel001121" layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label fx:id="nivel001121" layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
@@ -218,7 +218,7 @@
                   </AnchorPane>
                   <AnchorPane fx:id="pok21" layoutX="260.0" layoutY="209.0" onMouseClicked="#clickpokemon21" prefHeight="200.0" prefWidth="201.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="imagen21" fitHeight="125.0" fitWidth="172.0" layoutX="61.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="imagen21" fitHeight="125.0" fitWidth="172.0" layoutX="61.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@reshiram.png" />
                            </image>
@@ -228,18 +228,18 @@
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <ProgressBar fx:id="barravida21" layoutX="32.0" layoutY="172.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
+                        <ProgressBar fx:id="barravida21" layoutX="32.0" layoutY="170.0" prefHeight="13.0" prefWidth="179.0" progress="0.8" style="-fx-accent: #44E747;" />
                         <Label fx:id="nivel21" layoutX="197.0" layoutY="14.0" text="00" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vida21" layoutX="23.0" layoutY="185.0" text="inseta vi" textFill="WHITE">
+                        <Label fx:id="vida21" layoutX="23.0" layoutY="183.0" text="inseta vi" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="nivel0011211" layoutX="14.0" layoutY="169.0" text="PS" textFill="WHITE">
+                        <Label fx:id="nivel0011211" layoutX="14.0" layoutY="167.0" text="PS" textFill="WHITE">
                            <font>
                               <Font name="Times New Roman" size="16.0" />
                            </font>
