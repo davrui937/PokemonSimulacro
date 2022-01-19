@@ -1,45 +1,35 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import java.awt.*;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class Ventana2Controller {
 
 Pokemon pokemon=null;
+    Pokemon enemigo=null;
     String nivelaux = "Nv ";
 
     public Ventana2Controller() throws FileNotFoundException {
     }
 
-    public void pasarPokemon(Pokemon pokemon) {
+    public void pasarPokemon(Pokemon pokemon, Pokemon enemigo) {
         this.pokemon=pokemon;
+        this.enemigo=enemigo;
         nombrepok.setText(pokemon.getNombre());
         nivelpok.setText(nivelaux +pokemon.getNivel());
         barravidapok.setProgress((pokemon.getVidaact()*0.01));
         pok.setImage(pokemon.getImagenpelea());
+
+        nombreene.setText(enemigo.getNombre());
+        nivelene.setText(nivelaux +enemigo.getNivel());
+        barravidaene.setProgress((enemigo.getVidaact()*0.01));
+        ene.setImage(enemigo.getImagen());
     }
-    ArrayList <Pokemon> listaenemigos = new ArrayList<>();
-    Pokemon pokemon1 = new Pokemon(65,"Abomasnow",100,100, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
-    Pokemon pokemon2 = new Pokemon(47,"Avalugg",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
-    Pokemon pokemon3 = new Pokemon(32,"Glaceon",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")));
-    Pokemon pokemon4 = new Pokemon(84,"Weavile",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
-    Pokemon pokemon5 = new Pokemon(14,"Cloyster",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\rillaboom.png")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
 
 
     @FXML
@@ -54,6 +44,8 @@ Pokemon pokemon=null;
     Button botonseguro;
     @FXML
     Button botoncancelar;
+
+
      @FXML
      Label nombrepok;
      @FXML
@@ -65,22 +57,30 @@ Pokemon pokemon=null;
      @FXML
      ImageView pok;
 
+     @FXML
+     Label nombreene;
+     @FXML
+     Label nivelene;
+     @FXML
+     Label psene;
+    @FXML
+    ProgressBar barravidaene;
+     @FXML
+     ImageView ene;
+
     @FXML
     private void initialize(){
-
-        listaenemigos.add(pokemon1);
-        listaenemigos.add(pokemon2);
-        listaenemigos.add(pokemon3);
-        listaenemigos.add(pokemon4);
-        listaenemigos.add(pokemon5);
 
     }
 
 
-
     @FXML
     private void clickcurar(){
+    pokemon.curacion(pokemon);
+    actualizarvida(barravidapok,pokemon);
 
+    enemigo.curacion(enemigo);
+    actualizarvida(barravidaene,enemigo);
     }
 
     @FXML
@@ -90,6 +90,8 @@ Pokemon pokemon=null;
         botonmuyarriesgado.setVisible(true);
         botonseguro.setVisible(true);
         botoncancelar.setVisible(true);
+        botonatacar.setVisible(false);
+        botoncurarse.setVisible(false);
 
     }
 
@@ -99,21 +101,66 @@ Pokemon pokemon=null;
         botonmuyarriesgado.setVisible(false);
         botonseguro.setVisible(false);
         botoncancelar.setVisible(false);
+        botonatacar.setVisible(true);
+        botoncurarse.setVisible(true);
     }
 
     @FXML
     private void clickseguro(){
+        pokemon.ataqueseguro(enemigo);
+        actualizarvida(barravidaene,enemigo);
+        //pokemon.estavivo(enemigo);
 
+        enemigo.ataqueseguro(pokemon);
+        actualizarvida(barravidapok,pokemon);
+       // enemigo.estavivo(pokemon);
     }
 
     @FXML
     private void clickarriesgado(){
+        pokemon.ataquepocoseguro(enemigo);
+        actualizarvida(barravidaene,enemigo);
+        //pokemon.estavivo(enemigo);
 
+        enemigo.ataquepocoseguro(pokemon);
+        actualizarvida(barravidapok,pokemon);
+        //enemigo.estavivo(pokemon);
     }
     @FXML
     private void clickmuyarriesgado(){
-        //pokemon.ataquenadaseguro();
+        pokemon.ataquenadaseguro(enemigo);
+        actualizarvida(barravidaene,enemigo);
+        //pokemon.estavivo(enemigo);
+
+        enemigo.ataquenadaseguro(pokemon);
+        actualizarvida(barravidapok,pokemon);
+        //enemigo.estavivo(pokemon);
+    }
+
+    @FXML
+    private void encimapspok(){
+    pspok.setText(""+pokemon.getVidaact());
+    }
+
+    @FXML
+    private void encimapsene(){
+        psene.setText(""+enemigo.getVidaact());
+    }
+
+    @FXML
+    private void salirpspok(){
+        pspok.setText("PS");
+    }
+
+    @FXML
+    private void salirpsene(){
+        psene.setText("PS");
+    }
+
+    private void actualizarvida(ProgressBar actualizar, Pokemon pokemon){
+        actualizar.setProgress((pokemon.getVidaact()*0.01));
     }
 }
+
 
 

@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="500.0" maxWidth="750.0" minHeight="500.0" minWidth="750.0" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Ventana2Controller">
+<BorderPane maxHeight="500.0" maxWidth="750.0" minHeight="500.0" minWidth="750.0" prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Ventana2Controller">
    <center>
       <AnchorPane prefHeight="259.0" prefWidth="528.0" style="-fx-background-image: url('https://static.wikia.nocookie.net/pokemon-reborn/images/3/31/Icyfield.png/revision/latest?cb=20161005022621'); -fx-background-size: 100% 100%;">
          <children>
-            <ImageView fitHeight="165.0" fitWidth="204.0" layoutX="470.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ene" fitHeight="155.0" fitWidth="163.0" layoutX="506.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@abomasnow.gif" />
                </image>
@@ -19,20 +19,20 @@
                   <Image url="@reshiramespalda.gif" />
                </image>
             </ImageView>
-            <Pane layoutX="95.0" layoutY="31.0" prefHeight="83.0" prefWidth="235.0" style="-fx-background-color: #B1EBF5; -fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-radius: 8;">
+            <Pane layoutX="93.0" layoutY="27.0" prefHeight="83.0" prefWidth="235.0" style="-fx-background-color: #B1EBF5; -fx-border-width: 1; -fx-border-color: #000000; -fx-border-radius: 8; -fx-background-radius: 8;">
                <children>
-                  <ProgressBar layoutX="44.0" layoutY="47.0" prefHeight="20.0" prefWidth="174.0" progress="0.8" style="-fx-accent: #44E747;" />
-                  <Label layoutX="24.0" layoutY="18.0" prefHeight="17.0" prefWidth="150.0" style="-fx-border-width: 5px;" text="Label">
+                  <ProgressBar fx:id="barravidaene" layoutX="44.0" layoutY="47.0" prefHeight="20.0" prefWidth="174.0" progress="0.8" style="-fx-accent: #44E747;" />
+                  <Label fx:id="nombreene" layoutX="24.0" layoutY="18.0" prefHeight="17.0" prefWidth="150.0" style="-fx-border-width: 5px;" text="Label">
                      <font>
                         <Font name="Times New Roman" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="183.0" layoutY="17.0" text="Label">
+                  <Label fx:id="nivelene" layoutX="183.0" layoutY="17.0" text="Label">
                      <font>
                         <Font name="Times New Roman" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="29.0" layoutY="47.0" prefHeight="18.0" prefWidth="18.0" text="PS">
+                  <Label fx:id="psene" layoutX="25.0" layoutY="47.0" onMouseEntered="#encimapsene" onMouseExited="#salirpsene" prefHeight="18.0" prefWidth="18.0" text="PS">
                      <font>
                         <Font name="Times New Roman" size="12.0" />
                      </font>
@@ -52,7 +52,7 @@
                         <Font name="Times New Roman" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="pspok" layoutX="29.0" layoutY="47.0" prefHeight="18.0" prefWidth="18.0" text="PS">
+                  <Label fx:id="pspok" layoutX="26.0" layoutY="47.0" onMouseEntered="#encimapspok" onMouseExited="#salirpspok" prefHeight="18.0" prefWidth="18.0" text="PS">
                      <font>
                         <Font name="Times New Roman" size="12.0" />
                      </font>
@@ -74,10 +74,10 @@
          <right>
             <AnchorPane prefHeight="109.0" prefWidth="467.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="botonmuyarriesgado" layoutX="285.0" layoutY="7.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0" onMouseClicked="#clickmuyarriesgado" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="MUY ARRIESGADO" textFill="WHITE" visible="false" />
-                  <Button fx:id="botonseguro" layoutX="54.0" layoutY="7.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0" onMouseClicked="#clickseguro" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="SEGURO" textFill="WHITE" visible="false"/>
-                  <Button fx:id="botonarriesgado" layoutX="54.0" layoutY="52.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0"  onMouseClicked="#clickarriesgado" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="ARRIESGADO" textFill="WHITE" visible="false"/>
-                  <Button fx:id="botoncancelar" layoutX="285.0" layoutY="52.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="128.0" onMouseClicked="#clickcancelar" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="CANCELAR" textFill="WHITE" visible="false"/>
+                  <Button fx:id="botonmuyarriesgado" layoutX="285.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#clickmuyarriesgado" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="MUY ARRIESGADO" textFill="WHITE" visible="false" />
+                  <Button fx:id="botonseguro" layoutX="54.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#clickseguro" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="SEGURO" textFill="WHITE" visible="false" />
+                  <Button fx:id="botonarriesgado" layoutX="54.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#clickarriesgado" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="ARRIESGADO" textFill="WHITE" visible="false" />
+                  <Button fx:id="botoncancelar" layoutX="285.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#clickcancelar" prefHeight="38.0" prefWidth="128.0" style="-fx-background-color: #4A6467; -fx-background-radius: 10; -fx-border-color: #000000; -fx-border-radius: 10;" text="CANCELAR" textFill="WHITE" visible="false" />
                </children></AnchorPane>
          </right>
       </BorderPane>

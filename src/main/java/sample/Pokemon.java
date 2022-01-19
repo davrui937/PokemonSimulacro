@@ -67,9 +67,14 @@ public class Pokemon{
         this.imagenpelea = imagenpelea;
     }
 
+
+
     public void curacion(Pokemon pokemon){
         pokemon.setVidaact((int) (pokemon.getVidaact()+ Math.random()*76 + 25));
+        if(pokemon.vidaact>pokemon.vidamax){pokemon.vidaact=pokemon.vidamax;}
     }
+
+
     public void ataqueseguro(Pokemon enemigo){
         enemigo.setVidaact(enemigo.getVidaact()-20);
     }
@@ -80,5 +85,11 @@ public class Pokemon{
 
     public void ataquenadaseguro(Pokemon enemigo){
         enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*51 + 0));
+    }
+
+    public void estavivo(Pokemon pokemon){
+        if (pokemon.vidaact<0){
+            pokemon.vidaact=0;
+        }
     }
 }

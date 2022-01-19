@@ -22,12 +22,20 @@ import java.util.ArrayList;
 public class Ventana1Controller {
 
 	ArrayList <Pokemon> listapokemon = new ArrayList<>();
-	Pokemon pokemon1 = new Pokemon(65,"Reshiram",100,61, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
-	Pokemon pokemon2 = new Pokemon(47,"Banano",100,86,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
-	Pokemon pokemon3 = new Pokemon(32,"Macaco",100,40,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")));
-	Pokemon pokemon4 = new Pokemon(84,"Infernape",100,76,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
+	Pokemon pokemon1 = new Pokemon(65,"Reshiram",100,100, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
+	Pokemon pokemon2 = new Pokemon(47,"Banano",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
+	Pokemon pokemon3 = new Pokemon(32,"Macaco",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")));
+	Pokemon pokemon4 = new Pokemon(84,"Infernape",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
 	Pokemon pokemon5 = new Pokemon(14,"Rillaboom",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\rillaboom.png")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
 	Pokemon pokemon6 = new Pokemon(45,"Slaking",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\slaking.png")),new Image(new FileInputStream(".\\src\\main\\resources\\slakingespalda.gif")));
+
+
+	ArrayList <Pokemon> listaenemigos = new ArrayList<>();
+	Pokemon enemigo1 = new Pokemon(65,"Abomasnow",100,100, new Image(new FileInputStream(".\\src\\main\\resources\\abomasnow.gif")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
+	Pokemon enemigo2 = new Pokemon(47,"Avalugg",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\avalugg.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
+	Pokemon enemigo3 = new Pokemon(32,"Glaceon",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\glaceon.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")));
+	Pokemon enemigo4 = new Pokemon(84,"Weavile",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\weavile.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
+	Pokemon enemigo5 = new Pokemon(14,"Cloyster",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\cloyster.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
 
 	Pokemon seleccion = pokemon1;
 
@@ -130,6 +138,13 @@ public class Ventana1Controller {
 		listapokemon.add(pokemon4);
 		listapokemon.add(pokemon5);
 		listapokemon.add(pokemon6);
+
+		listaenemigos.add(enemigo1);
+		listaenemigos.add(enemigo2);
+		listaenemigos.add(enemigo3);
+		listaenemigos.add(enemigo4);
+		listaenemigos.add(enemigo5);
+
 
 		//PRIMER POKEMON
 		nombre00.setText(pokemon1.getNombre());
@@ -261,6 +276,10 @@ public class Ventana1Controller {
 
 	@FXML
 	protected void clickContinuar() {
+
+		int aleatorio= (int) (Math.random()*5);
+
+		Pokemon enem= listaenemigos.get(aleatorio);
 		try {
 			if (stage == null || !stage.isShowing()) {
 				stage = new Stage();
@@ -273,7 +292,7 @@ public class Ventana1Controller {
 
 				v = loader.getController();
 
-				v.pasarPokemon(seleccion);
+				v.pasarPokemon(seleccion,enem);
 			}
 
 		} catch (IOException e) {
