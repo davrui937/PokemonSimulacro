@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #675073;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Ventana1Controller">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #675073;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Ventana1Controller">
 	<opaqueInsets>
 		<Insets />
 	</opaqueInsets>
@@ -259,7 +259,7 @@
             </GridPane>
             <Pane prefHeight="21.0" prefWidth="750.0" style="-fx-background-color: #7D6A87;">
                <children>
-                  <Button fx:id="botoncontinuar" layoutX="637.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="19.0" prefWidth="84.0" text="Continuar" textAlignment="JUSTIFY" visible="false">
+                  <Button fx:id="botoncontinuar" layoutX="637.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#clickContinuar" prefHeight="19.0" prefWidth="84.0" text="Continuar" textAlignment="JUSTIFY" visible="false">
                      <font>
                         <Font size="9.0" />
                      </font></Button>

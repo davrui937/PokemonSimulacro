@@ -9,13 +9,14 @@ public class Pokemon{
     private int vidamax;
     private int vidaact;
     private Image imagen;
-
-    public Pokemon(int nivel, String nombre, int vidamax, int vidaact, Image imagen) {
+    private Image imagenpelea;
+    public Pokemon(int nivel, String nombre, int vidamax, int vidaact, Image imagen, Image imagenpelea) {
         this.nivel = nivel;
         this.nombre = nombre;
         this.vidamax = vidamax;
         this.vidaact = vidaact;
         this.imagen = imagen;
+        this.imagenpelea=imagenpelea;
     }
 
     public int getNivel() {
@@ -58,20 +59,26 @@ public class Pokemon{
         this.imagen = imagen;
     }
 
+    public Image getImagenpelea() {
+        return imagenpelea;
+    }
 
+    public void setImagenpelea(Image imagenpelea) {
+        this.imagenpelea = imagenpelea;
+    }
 
-    public static void curacion(Pokemon pokemon){
+    public void curacion(Pokemon pokemon){
         pokemon.setVidaact((int) (pokemon.getVidaact()+ Math.random()*76 + 25));
     }
-    public static void ataqueseguro(Pokemon enemigo){
+    public void ataqueseguro(Pokemon enemigo){
         enemigo.setVidaact(enemigo.getVidaact()-20);
     }
 
-    public static void ataquepocoseguro(Pokemon enemigo){
+    public void ataquepocoseguro(Pokemon enemigo){
         enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*26 + 10));
     }
 
-    public static void ataquenadaseguro(Pokemon enemigo){
+    public void ataquenadaseguro(Pokemon enemigo){
         enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*51 + 0));
     }
 }

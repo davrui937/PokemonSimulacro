@@ -10,24 +10,26 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Ventana1Controller {
 
-	private final String NIVELAUX= "Nv ";
-
 	ArrayList <Pokemon> listapokemon = new ArrayList<>();
-	Pokemon pokemon1 = new Pokemon(65,"Reshiram",100,61, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")));
-	Pokemon pokemon2 = new Pokemon(47,"Banano",100,86,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")));
-	Pokemon pokemon3 = new Pokemon(32,"Macaco",100,40,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")));
-	Pokemon pokemon4 = new Pokemon(84,"Infernape",100,76,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")));
-	Pokemon pokemon5 = new Pokemon(14,"Rillaboom",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\rillaboom.png")));
-	Pokemon pokemon6 = new Pokemon(45,"Slaking",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\slaking.png")));
+	Pokemon pokemon1 = new Pokemon(65,"Reshiram",100,61, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
+	Pokemon pokemon2 = new Pokemon(47,"Banano",100,86,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
+	Pokemon pokemon3 = new Pokemon(32,"Macaco",100,40,new Image(new FileInputStream(".\\src\\main\\resources\\primeape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\primeapeespalda.gif")));
+	Pokemon pokemon4 = new Pokemon(84,"Infernape",100,76,new Image(new FileInputStream(".\\src\\main\\resources\\infernape.png")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
+	Pokemon pokemon5 = new Pokemon(14,"Rillaboom",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\rillaboom.png")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
+	Pokemon pokemon6 = new Pokemon(45,"Slaking",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\slaking.png")),new Image(new FileInputStream(".\\src\\main\\resources\\slakingespalda.gif")));
+
+	Pokemon seleccion = pokemon1;
 
 	@FXML
 	Button botoncontinuar;
@@ -131,14 +133,15 @@ public class Ventana1Controller {
 
 		//PRIMER POKEMON
 		nombre00.setText(pokemon1.getNombre());
-		nivel00.setText(NIVELAUX+pokemon1.getNivel());
+		String NIVELAUX = "Nv ";
+		nivel00.setText(NIVELAUX +pokemon1.getNivel());
 		barravida00.setProgress((pokemon1.getVidaact()*0.01));
 		vida00.setText(pokemon1.getVidaact()+"/"+ pokemon1.getVidamax());
 		imagen00.setImage(pokemon1.getImagen());
 
 		//SEGUNDO POKEMON
 		nombre10.setText(pokemon2.getNombre());
-		nivel10.setText(NIVELAUX+pokemon2.getNivel());
+		nivel10.setText(NIVELAUX +pokemon2.getNivel());
 		barravida10.setProgress((pokemon2.getVidaact()*0.01));
 		vida10.setText(pokemon2.getVidaact()+"/"+ pokemon2.getVidamax());
 		imagen10.setImage(pokemon2.getImagen());
@@ -146,7 +149,7 @@ public class Ventana1Controller {
 
 		//TERCERO POKEMON
 		nombre20.setText(pokemon3.getNombre());
-		nivel20.setText(NIVELAUX+pokemon3.getNivel());
+		nivel20.setText(NIVELAUX +pokemon3.getNivel());
 		barravida20.setProgress((pokemon3.getVidaact()*0.01));
 		vida20.setText(pokemon3.getVidaact()+"/"+ pokemon3.getVidamax());
 		imagen20.setImage(pokemon3.getImagen());
@@ -154,7 +157,7 @@ public class Ventana1Controller {
 
 		//CUARTO POKEMON
 		nombre01.setText(pokemon4.getNombre());
-		nivel01.setText(NIVELAUX+pokemon4.getNivel());
+		nivel01.setText(NIVELAUX +pokemon4.getNivel());
 		barravida01.setProgress((pokemon4.getVidaact()*0.01));
 		vida01.setText(pokemon4.getVidaact()+"/"+ pokemon4.getVidamax());
 		imagen01.setImage(pokemon4.getImagen());
@@ -162,14 +165,14 @@ public class Ventana1Controller {
 
 		//QUINTO POKEMON
 		nombre11.setText(pokemon5.getNombre());
-		nivel11.setText(NIVELAUX+pokemon5.getNivel());
+		nivel11.setText(NIVELAUX +pokemon5.getNivel());
 		barravida11.setProgress((pokemon5.getVidaact()*0.01));
 		vida11.setText(pokemon5.getVidaact()+"/"+ pokemon5.getVidamax());
 		imagen11.setImage(pokemon5.getImagen());
 
 		//SEXTO POKEMON
 		nombre21.setText(pokemon6.getNombre());
-		nivel21.setText(NIVELAUX+pokemon6.getNivel());
+		nivel21.setText(NIVELAUX +pokemon6.getNivel());
 		barravida21.setProgress((pokemon6.getVidaact()*0.01));
 		vida21.setText(pokemon6.getVidaact()+"/"+ pokemon6.getVidamax());
 		imagen21.setImage(pokemon6.getImagen());
@@ -185,6 +188,7 @@ public class Ventana1Controller {
 		pok01.setStyle("-fx-background-color: #7D6A87");
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
+		seleccion=pokemon1;
 	}
 
 	@FXML
@@ -196,6 +200,7 @@ public class Ventana1Controller {
 		pok01.setStyle("-fx-background-color: #7D6A87");
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
+		seleccion=pokemon2;
 	}
 
 	@FXML
@@ -207,6 +212,7 @@ public class Ventana1Controller {
 		pok01.setStyle("-fx-background-color: #7D6A87");
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
+		seleccion=pokemon3;
 	}
 
 	@FXML
@@ -218,6 +224,7 @@ public class Ventana1Controller {
 		pok00.setStyle("-fx-background-color: #7D6A87");
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
+		seleccion=pokemon4;
 	}
 
 	@FXML
@@ -229,6 +236,7 @@ public class Ventana1Controller {
 		pok01.setStyle("-fx-background-color: #7D6A87");
 		pok00.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
+		seleccion=pokemon5;
 	}
 
 	@FXML
@@ -240,10 +248,37 @@ public class Ventana1Controller {
 		pok01.setStyle("-fx-background-color: #7D6A87");
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok00.setStyle("-fx-background-color: #7D6A87");
+		seleccion=pokemon6;
 	}
 
 	private void botonmostrar(){
 		botoncontinuar.setVisible(true);
+	}
+
+
+	private Ventana2Controller v = null;
+	private Stage stage = null;
+
+	@FXML
+	protected void clickContinuar() {
+		try {
+			if (stage == null || !stage.isShowing()) {
+				stage = new Stage();
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/Ventana2.fxml"));
+				BorderPane root = loader.load();
+				Scene scene = new Scene(root, 750,500);
+				stage.setResizable(false);
+				stage.setScene(scene);
+				stage.show();
+
+				v = loader.getController();
+
+				v.pasarPokemon(seleccion);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 
