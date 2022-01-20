@@ -37,7 +37,7 @@ public class Ventana1Controller {
 	Pokemon enemigo4 = new Pokemon(84,"Weavile",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\weavile.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\infernapeespalda.gif")));
 	Pokemon enemigo5 = new Pokemon(14,"Cloyster",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\cloyster.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
 
-	Pokemon seleccion = pokemon1;
+	Pokemon seleccion=null;
 
 	@FXML
 	Button botoncontinuar;
@@ -204,7 +204,7 @@ public class Ventana1Controller {
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
 		seleccion=pokemon1;
-	}
+		}
 
 	@FXML
 	private void clickpokemon10(){
@@ -271,15 +271,21 @@ public class Ventana1Controller {
 	}
 
 
+
+	public void actualizarvida1(Pokemon pokemon){
+		seleccion.setVidaact(pokemon.getVidaact());
+		initialize();
+	}
+
 	private Ventana2Controller v = null;
 	private Stage stage = null;
 
+
 	@FXML
 	protected void clickContinuar() {
-
 		int aleatorio= (int) (Math.random()*5);
-
 		Pokemon enem= listaenemigos.get(aleatorio);
+
 		try {
 			if (stage == null || !stage.isShowing()) {
 				stage = new Stage();
@@ -293,12 +299,12 @@ public class Ventana1Controller {
 				v = loader.getController();
 
 				v.pasarPokemon(seleccion,enem);
+				v.recibircontrolador(this);
 			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
 
 }

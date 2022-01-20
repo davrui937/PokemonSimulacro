@@ -70,7 +70,7 @@ public class Pokemon{
 
 
     public void curacion(Pokemon pokemon){
-        pokemon.setVidaact((int) (pokemon.getVidaact()+ Math.random()*76 + 25));
+        pokemon.setVidaact((int) (pokemon.getVidaact()+ Math.random()*50 + 25));
         if(pokemon.vidaact>pokemon.vidamax){pokemon.vidaact=pokemon.vidamax;}
     }
 
@@ -80,16 +80,19 @@ public class Pokemon{
     }
 
     public void ataquepocoseguro(Pokemon enemigo){
-        enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*26 + 10));
+        enemigo.setVidaact((int) (enemigo.getVidaact()- (Math.random()*15 + 10)));
     }
 
     public void ataquenadaseguro(Pokemon enemigo){
         enemigo.setVidaact((int) (enemigo.getVidaact()- Math.random()*51 + 0));
     }
 
-    public void estavivo(Pokemon pokemon){
-        if (pokemon.vidaact<0){
+    public boolean estavivo(Pokemon pokemon){
+        boolean vivo=true;
+        if (pokemon.vidaact<=0){
             pokemon.vidaact=0;
+            vivo=false;
         }
+        return vivo;
     }
 }

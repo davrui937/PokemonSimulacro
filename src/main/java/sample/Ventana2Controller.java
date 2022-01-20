@@ -1,21 +1,31 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Ventana2Controller {
 
-Pokemon pokemon=null;
+    Pokemon pokemon=null;
     Pokemon enemigo=null;
     String nivelaux = "Nv ";
 
-    public Ventana2Controller() throws FileNotFoundException {
+    Ventana1Controller controlador1=null;
+
+
+    public Ventana2Controller() {
     }
+
+    public void recibircontrolador(Ventana1Controller controlador1){this.controlador1=controlador1;}
 
     public void pasarPokemon(Pokemon pokemon, Pokemon enemigo) {
         this.pokemon=pokemon;
@@ -107,34 +117,60 @@ Pokemon pokemon=null;
 
     @FXML
     private void clickseguro(){
+
+        if(enemigo.estavivo(pokemon)){
         pokemon.ataqueseguro(enemigo);
         actualizarvida(barravidaene,enemigo);
-        //pokemon.estavivo(enemigo);
+        pokemon.estavivo(enemigo);}
 
+        if (pokemon.estavivo(enemigo)){
         enemigo.ataqueseguro(pokemon);
         actualizarvida(barravidapok,pokemon);
-       // enemigo.estavivo(pokemon);
+        enemigo.estavivo(pokemon);
+        if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
+        } else{
+            controlador1.actualizarvida1(pokemon);
+        }
+
     }
+
 
     @FXML
     private void clickarriesgado(){
+
+        if(enemigo.estavivo(pokemon)){
         pokemon.ataquepocoseguro(enemigo);
         actualizarvida(barravidaene,enemigo);
-        //pokemon.estavivo(enemigo);
+        pokemon.estavivo(enemigo);}
 
-        enemigo.ataquepocoseguro(pokemon);
-        actualizarvida(barravidapok,pokemon);
-        //enemigo.estavivo(pokemon);
+        if (pokemon.estavivo(enemigo)) {
+            enemigo.ataquepocoseguro(pokemon);
+            actualizarvida(barravidapok, pokemon);
+            pokemon.estavivo(pokemon);
+            if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
+        }else{
+            controlador1.actualizarvida1(pokemon);
+        }
+
     }
     @FXML
     private void clickmuyarriesgado(){
+
+        if (pokemon.estavivo(enemigo)) {
         pokemon.ataquenadaseguro(enemigo);
         actualizarvida(barravidaene,enemigo);
-        //pokemon.estavivo(enemigo);
+        pokemon.estavivo(enemigo);}
 
-        enemigo.ataquenadaseguro(pokemon);
-        actualizarvida(barravidapok,pokemon);
-        //enemigo.estavivo(pokemon);
+        if (pokemon.estavivo(enemigo)) {
+            enemigo.ataquenadaseguro(pokemon);
+            actualizarvida(barravidapok, pokemon);
+            enemigo.estavivo(pokemon);
+            if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
+        }
+        else{
+            controlador1.actualizarvida1(pokemon);
+        }
+
     }
 
     @FXML
@@ -160,6 +196,8 @@ Pokemon pokemon=null;
     private void actualizarvida(ProgressBar actualizar, Pokemon pokemon){
         actualizar.setProgress((pokemon.getVidaact()*0.01));
     }
+
+
 }
 
 
