@@ -283,9 +283,10 @@ public class Ventana1Controller {
 
 	@FXML
 	protected void clickContinuar() {
-		int aleatorio= (int) (Math.random()*5);
+		int aleatorio= (int) (Math.random()*listaenemigos.size());
 		Pokemon enem= listaenemigos.get(aleatorio);
 
+		if (enem.getVidaact()>=0){listaenemigos.remove(enem);}
 		try {
 			if (stage == null || !stage.isShowing()) {
 				stage = new Stage();
