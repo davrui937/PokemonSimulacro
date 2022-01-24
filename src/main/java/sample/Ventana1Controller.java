@@ -21,6 +21,8 @@ import java.util.ArrayList;
 
 public class Ventana1Controller {
 
+
+
 	ArrayList <Pokemon> listapokemon = new ArrayList<>();
 	Pokemon pokemon1 = new Pokemon(65,"Reshiram",100,100, new Image(new FileInputStream(".\\src\\main\\resources\\reshiram.png")), new Image(new FileInputStream(".\\src\\main\\resources\\reshiramespalda.gif")));
 	Pokemon pokemon2 = new Pokemon(47,"Banano",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\banano.png")),new Image(new FileInputStream(".\\src\\main\\resources\\bananoespalda.gif")));
@@ -38,7 +40,7 @@ public class Ventana1Controller {
 	Pokemon enemigo5 = new Pokemon(14,"Cloyster",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\cloyster.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
 
 	Pokemon seleccion=null;
-
+	int aleatorio= (int) (Math.random()*listaenemigos.size());
 	@FXML
 	Button botoncontinuar;
 
@@ -278,15 +280,17 @@ public class Ventana1Controller {
 	}
 
 	private Ventana2Controller v = null;
-	private Stage stage = null;
+	public Stage stage = null;
 
 
 	@FXML
 	protected void clickContinuar() {
-		int aleatorio= (int) (Math.random()*listaenemigos.size());
+
 		Pokemon enem= listaenemigos.get(aleatorio);
 
-		if (enem.getVidaact()>=0){listaenemigos.remove(enem);}
+		if (!enem.estavivo(enem)){listaenemigos.remove(enem);
+			 enem= listaenemigos.get(aleatorio);}
+
 		try {
 			if (stage == null || !stage.isShowing()) {
 				stage = new Stage();

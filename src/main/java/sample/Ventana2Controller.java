@@ -2,16 +2,17 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Optional;
 
 public class Ventana2Controller {
 
@@ -21,11 +22,32 @@ public class Ventana2Controller {
 
     Ventana1Controller controlador1=null;
 
+    public void recibircontrolador(Ventana1Controller controlador1){this.controlador1=controlador1;}
 
-    public Ventana2Controller() {
+    private void showAlert(Alert alert) {
+        Optional<ButtonType> resultado = alert.showAndWait();
+        if(!resultado.isPresent()) {
+            System.out.println("Dialogo cerrado con la X");
+        } else if(resultado.get() == ButtonType.PREVIOUS) {
+            controlador1.stage.close();
+        } else if (resultado.get() == ButtonType.CLOSE) {
+            System.exit(1);
+        } else {
+            System.out.println("Resultado = OTROS: " + resultado.get().getText());
+        }
     }
 
-    public void recibircontrolador(Ventana1Controller controlador1){this.controlador1=controlador1;}
+    private void alertaMuerte(Pokemon pokemon){
+
+        Alert customAlert = new Alert(Alert.AlertType.NONE);
+        customAlert.setTitle("Pokemon eliminado");
+        customAlert.setContentText("El pokemon "+ pokemon.getNombre()+" ha sido eliminado.");
+        customAlert.setGraphic(new ImageView(pokemon.getImagen()));
+        customAlert.getDialogPane().getButtonTypes().addAll(ButtonType.PREVIOUS, ButtonType.CLOSE);
+        showAlert(customAlert);
+    }
+
+
 
     public void pasarPokemon(Pokemon pokemon, Pokemon enemigo) {
         this.pokemon=pokemon;
@@ -130,6 +152,7 @@ public class Ventana2Controller {
         if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
         } else{
             controlador1.actualizarvida1(pokemon);
+            alertaMuerte(enemigo);
         }
 
     }
@@ -150,6 +173,7 @@ public class Ventana2Controller {
             if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
         }else{
             controlador1.actualizarvida1(pokemon);
+            alertaMuerte(enemigo);
         }
 
     }
@@ -169,6 +193,7 @@ public class Ventana2Controller {
         }
         else{
             controlador1.actualizarvida1(pokemon);
+            alertaMuerte(enemigo);
         }
 
     }
