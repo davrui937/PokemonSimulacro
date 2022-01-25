@@ -3,9 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -18,6 +16,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Ventana1Controller {
 
@@ -40,7 +39,6 @@ public class Ventana1Controller {
 	Pokemon enemigo5 = new Pokemon(14,"Cloyster",100,100,new Image(new FileInputStream(".\\src\\main\\resources\\cloyster.gif")),new Image(new FileInputStream(".\\src\\main\\resources\\rillaboomespalda.gif")));
 
 	Pokemon seleccion=null;
-	int aleatorio= (int) (Math.random()*listaenemigos.size());
 	@FXML
 	Button botoncontinuar;
 
@@ -206,6 +204,7 @@ public class Ventana1Controller {
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
 		seleccion=pokemon1;
+		if(pokemon1.getVidaact()==0){showAlert(new Alert(Alert.AlertType.ERROR));quitarclick();}
 		}
 
 	@FXML
@@ -218,6 +217,7 @@ public class Ventana1Controller {
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
 		seleccion=pokemon2;
+		if(pokemon2.getVidaact()==0){showAlert(new Alert(Alert.AlertType.ERROR));quitarclick();}
 	}
 
 	@FXML
@@ -230,6 +230,7 @@ public class Ventana1Controller {
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
 		seleccion=pokemon3;
+		if(pokemon3.getVidaact()==0){showAlert(new Alert(Alert.AlertType.ERROR));quitarclick();}
 	}
 
 	@FXML
@@ -242,6 +243,7 @@ public class Ventana1Controller {
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
 		seleccion=pokemon4;
+		if(pokemon4.getVidaact()==0){showAlert(new Alert(Alert.AlertType.ERROR));quitarclick();}
 	}
 
 	@FXML
@@ -254,6 +256,7 @@ public class Ventana1Controller {
 		pok00.setStyle("-fx-background-color: #7D6A87");
 		pok21.setStyle("-fx-background-color: #7D6A87");
 		seleccion=pokemon5;
+		if(pokemon5.getVidaact()==0){showAlert(new Alert(Alert.AlertType.ERROR));quitarclick();}
 	}
 
 	@FXML
@@ -266,13 +269,31 @@ public class Ventana1Controller {
 		pok11.setStyle("-fx-background-color: #7D6A87");
 		pok00.setStyle("-fx-background-color: #7D6A87");
 		seleccion=pokemon6;
+		if(pokemon6.getVidaact()==0){showAlert(new Alert(Alert.AlertType.ERROR));quitarclick();}
+	}
+
+	public void quitarclick(){
+		pok21.setStyle("-fx-background-color: #7D6A87");
+		pok10.setStyle("-fx-background-color: #7D6A87");
+		pok20.setStyle("-fx-background-color: #7D6A87");
+		pok01.setStyle("-fx-background-color: #7D6A87");
+		pok11.setStyle("-fx-background-color: #7D6A87");
+		pok00.setStyle("-fx-background-color: #7D6A87");
+		botonocultar();
+
 	}
 
 	private void botonmostrar(){
 		botoncontinuar.setVisible(true);
 	}
 
+	private void botonocultar(){
+		botoncontinuar.setVisible(false);
+	}
 
+	private void showAlert(Alert alert) {
+		Optional<ButtonType> resultado = alert.showAndWait();
+	}
 
 	public void actualizarvida1(Pokemon pokemon){
 		seleccion.setVidaact(pokemon.getVidaact());
@@ -282,15 +303,17 @@ public class Ventana1Controller {
 	private Ventana2Controller v = null;
 	public Stage stage = null;
 
+	int aleatorio=0;
 
 	@FXML
 	protected void clickContinuar() {
-
+		aleatorio= (int) (Math.random()*listaenemigos.size());
 		Pokemon enem= listaenemigos.get(aleatorio);
 
 		if (!enem.estavivo(enem)){listaenemigos.remove(enem);
 			 enem= listaenemigos.get(aleatorio);}
 
+		if(listaenemigos.size()<=0){showAlert(new Alert(Alert.AlertType.ERROR));}
 		try {
 			if (stage == null || !stage.isShowing()) {
 				stage = new Stage();

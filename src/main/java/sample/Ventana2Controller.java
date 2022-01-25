@@ -144,12 +144,14 @@ public class Ventana2Controller {
         pokemon.ataqueseguro(enemigo);
         actualizarvida(barravidaene,enemigo);
         pokemon.estavivo(enemigo);}
+        else {alertaMuerte(pokemon);}
 
         if (pokemon.estavivo(enemigo)){
         enemigo.ataqueseguro(pokemon);
         actualizarvida(barravidapok,pokemon);
         enemigo.estavivo(pokemon);
-        if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
+        if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);
+            alertaMuerte(pokemon);}
         } else{
             controlador1.actualizarvida1(pokemon);
             alertaMuerte(enemigo);
@@ -165,12 +167,14 @@ public class Ventana2Controller {
         pokemon.ataquepocoseguro(enemigo);
         actualizarvida(barravidaene,enemigo);
         pokemon.estavivo(enemigo);}
+        else {alertaMuerte(pokemon);}
 
         if (pokemon.estavivo(enemigo)) {
             enemigo.ataquepocoseguro(pokemon);
             actualizarvida(barravidapok, pokemon);
             pokemon.estavivo(pokemon);
-            if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
+            if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);
+                alertaMuerte(pokemon);}
         }else{
             controlador1.actualizarvida1(pokemon);
             alertaMuerte(enemigo);
@@ -180,7 +184,7 @@ public class Ventana2Controller {
     @FXML
     private void clickmuyarriesgado(){
 
-        if (pokemon.estavivo(enemigo)) {
+        if (enemigo.estavivo(pokemon)) {
         pokemon.ataquenadaseguro(enemigo);
         actualizarvida(barravidaene,enemigo);
         pokemon.estavivo(enemigo);}
@@ -189,7 +193,8 @@ public class Ventana2Controller {
             enemigo.ataquenadaseguro(pokemon);
             actualizarvida(barravidapok, pokemon);
             enemigo.estavivo(pokemon);
-            if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);}
+            if(!enemigo.estavivo(pokemon)){controlador1.actualizarvida1(pokemon);
+                alertaMuerte(pokemon);}
         }
         else{
             controlador1.actualizarvida1(pokemon);
@@ -220,6 +225,7 @@ public class Ventana2Controller {
 
     private void actualizarvida(ProgressBar actualizar, Pokemon pokemon){
         actualizar.setProgress((pokemon.getVidaact()*0.01));
+        controlador1.quitarclick();
     }
 
 
