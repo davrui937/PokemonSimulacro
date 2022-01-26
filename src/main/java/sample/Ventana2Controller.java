@@ -52,14 +52,15 @@ public class Ventana2Controller {
     public void pasarPokemon(Pokemon pokemon, Pokemon enemigo) {
         this.pokemon=pokemon;
         this.enemigo=enemigo;
+
         nombrepok.setText(pokemon.getNombre());
         nivelpok.setText(nivelaux +pokemon.getNivel());
-        barravidapok.setProgress((pokemon.getVidaact()*0.01));
+        barravidapok.setProgress(((double) pokemon.getVidaact()/pokemon.getVidamax()));
         pok.setImage(pokemon.getImagenpelea());
 
         nombreene.setText(enemigo.getNombre());
         nivelene.setText(nivelaux +enemigo.getNivel());
-        barravidaene.setProgress((enemigo.getVidaact()*0.01));
+        barravidaene.setProgress(((double) enemigo.getVidaact()/enemigo.getVidamax()));
         ene.setImage(enemigo.getImagen());
     }
 
@@ -102,7 +103,6 @@ public class Ventana2Controller {
 
     @FXML
     private void initialize(){
-
     }
 
 
@@ -110,6 +110,7 @@ public class Ventana2Controller {
     private void clickcurar(){
     pokemon.curacion(pokemon);
     actualizarvida(barravidapok,pokemon);
+
 
     enemigo.curacion(enemigo);
     actualizarvida(barravidaene,enemigo);
@@ -224,7 +225,12 @@ public class Ventana2Controller {
     }
 
     private void actualizarvida(ProgressBar actualizar, Pokemon pokemon){
-        actualizar.setProgress((pokemon.getVidaact()*0.01));
+        actualizar.setProgress(((double) pokemon.getVidaact()/pokemon.getVidamax()));
+        if(actualizar.getProgress()>0.8){actualizar.setStyle("-fx-accent: #44E747;");}
+        if (actualizar.getProgress()<0.7 && actualizar.getProgress()>0.5){actualizar.setStyle("-fx-accent: #F3E000;"); }
+        if (actualizar.getProgress()<0.5 && actualizar.getProgress()>0.2){actualizar.setStyle("-fx-accent: #E88E1C;"); }
+        if (actualizar.getProgress()<0.2){actualizar.setStyle("-fx-accent: #B10709"); }
+
         controlador1.quitarclick();
     }
 
