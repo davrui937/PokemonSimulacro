@@ -139,11 +139,11 @@ public class Ventana1Controller {
 		listapokemon.add(pokemon5);
 		listapokemon.add(pokemon6);
 
-		listaenemigos.add(enemigo1);
-		listaenemigos.add(enemigo2);
-		listaenemigos.add(enemigo3);
-		listaenemigos.add(enemigo4);
-		listaenemigos.add(enemigo5);
+		if(enemigo1.getVidaact()>0){listaenemigos.add(enemigo1);}
+		if(enemigo2.getVidaact()>0){listaenemigos.add(enemigo2);}
+		if(enemigo3.getVidaact()>0){listaenemigos.add(enemigo3);}
+		if(enemigo4.getVidaact()>0){listaenemigos.add(enemigo4);}
+		if(enemigo5.getVidaact()>0){listaenemigos.add(enemigo5);}
 
 
 		//PRIMER POKEMON
@@ -313,7 +313,6 @@ public class Ventana1Controller {
 		if (!enem.estavivo(enem)){listaenemigos.remove(enem);
 			 enem= listaenemigos.get(aleatorio);}
 
-		if(listaenemigos.size()<=0){showAlert(new Alert(Alert.AlertType.ERROR));}
 		try {
 			if (stage == null || !stage.isShowing()) {
 				stage = new Stage();
