@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PokedexController">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="375.0">
+         <children>
+            <Label fx:id="nombrepokemon" alignment="TOP_CENTER" layoutX="66.0" layoutY="29.0" prefHeight="17.0" prefWidth="230.0" text="Label" />
+            <Label fx:id="descripcionpokemon" alignment="TOP_LEFT" layoutX="43.0" layoutY="59.0" prefHeight="167.0" prefWidth="290.0" text="ADASD" textOverrun="CLIP" wrapText="true" />
+            <ImageView fx:id="fotopokemon" fitHeight="115.0" fitWidth="162.0" layoutX="107.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="base" fitHeight="102.0" fitWidth="102.0" layoutX="14.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="evolucion1" fitHeight="102.0" fitWidth="102.0" layoutX="137.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="evolucion2" fitHeight="102.0" fitWidth="102.0" layoutX="259.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="estrella" fitHeight="38.0" fitWidth="40.0" layoutX="23.0" layoutY="10.0" onMouseClicked="#clickEstrella" opacity="0.1" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@estrella.png" />
+               </image></ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

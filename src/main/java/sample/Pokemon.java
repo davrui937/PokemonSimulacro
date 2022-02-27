@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class Pokemon{
 
@@ -10,17 +11,23 @@ public class Pokemon{
     private int vidaact;
     private Image imagen;
     private Image imagenpelea;
-    public Pokemon(int nivel, String nombre, int vidamax, int vidaact, Image imagen, Image imagenpelea) {
+    private String descripcion;
+    private Image evolucion1;
+    public ImageView estrella;
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public Pokemon(int nivel, String nombre, int vidamax, int vidaact, Image imagen, Image imagenpelea, String descripcion, Image evolucion1) {
         this.nivel = nivel;
         this.nombre = nombre;
         this.vidamax = vidamax;
         this.vidaact = vidaact;
         this.imagen = imagen;
         this.imagenpelea=imagenpelea;
-    }
-
-    public int getNivel() {
-        return nivel;
+        this.descripcion=descripcion;
+        this.evolucion1=evolucion1;
     }
 
     public void setNivel(int nivel) {
@@ -67,7 +74,21 @@ public class Pokemon{
         this.imagenpelea = imagenpelea;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
 
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Image getEvolucion1() {
+        return evolucion1;
+    }
+
+    public void setEvolucion1(Image evolucion1) {
+        this.evolucion1 = evolucion1;
+    }
 
     public void curacion(Pokemon pokemon){
         pokemon.setVidaact((int) (pokemon.getVidaact()+ Math.random()*50 + 25));
